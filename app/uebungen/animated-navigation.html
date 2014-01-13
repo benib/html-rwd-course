@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+
+  <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width" />
+
+  <title>HTML5 @ SAE :: </title>
+  
+</head>
+<body>
+<style type="text/css">
+
+#animatedNav {
+    margin-left: auto
+    width: 900px;
+}
+
+#menu-sub {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAAA8CAYAAACEhkNqAAAAAXNSR0IArs4c6QAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB90CBgsxHZTRLWcAAATISURBVHja7ZxNaFxVFMd/8yYfJnm2SW37aBCtYFS0DoEoioIbUbuRiroQEQRX4lIXLlyISwU37rpTFy66ShCEFila8GNhIR1Do6k2U6tJrql27OTlq508F/eExgpNQuYjufP/QXiTN+/j3jv/e9495577QAghhBBCCCGEEEIIIYQQQgghhBBCCCGEEEK0FrlaXShfSHqBg8BjwINAP9ANXAU6gTngNuAy0Af8Zd//A8wD08BvwKLt2w1cAXbZ/222nQOcnV+pFt2yfsZAhWWieg54EXgE2LuN6rgALAGRbbttX5cJusPEXzWxXgIyE/GNHSG2a3TatZdu0mlWj20Hlm3fLPCLnXtpTae5xcoQWccqW+dxO7Xz5GooqjfNUonmdJ4FE+j8mk7TaR0mb8ddM/HO2+dJO8et6QjddnzOOtgMcB44AYxXi26qUcIaBN41cYkwqQLngC+ADzcirvxW7xgl8WHgJaBX7R8skQ1vCkBHlMRjmUsr652wVe60QbsInx7gFWBoI0oUYjP0Ac82QlgXgJLau2Vob5TFGrU/IWoqrBIwAvyo5mwJMuB03b3CzKWLURKX8MHBdmAPPhYiwqQMvJ+5dOJmB7XV4k7VoivnC8mwPRI3M6Wz2y6x3wQZ4SPhy/w/Qt4JrNj3Em5zqNrTaV2LlQux9vlC0gHcChzAh0NuB+7Fx9oOmUjvWuNCyzte//G3ABwD3tlIgDQXmKD68TG1Z0xIg8A+E0+n9LFpMS3h5y5PAcPA8YZN6WwzUb0FPA3cLyu0Llfw84U/4zNLfgLGgAlzyLY0+Z0LTFSva/z1H5ZMQLMmmFngO2AKKAJz1aKr1OPGbYE04OPAqy0mqhUTTQacNSdp2pyiM8APQKladOVmFC4UYR3B5zaF+shaxKevTOLzuU4DF+1zpVp06XYrdCjCGsLH0HYqf+LTUlZsWwY+N4tT2okVakM0gr9toDxhIqrpQFnCqh/jwH1NLsPMqkjwGZe/AyfN6ky1Wk8KRVjDwFP49NpGkJlnNQkcxc84nK0W3YqMs3nqIVQiSuJ54AHg7gbdMmfOwh3A88AbwD1REu+Jkng6SmIyl7b06qGQAqQDwEfA4SYXZQIfdPwUHysqteIStdCmdAbwizpexk/nNJNl/PzaSfwKl2+BP2iRtZC5UCuWLyQHgUeBt/HZE/1NLtJl8wRP4TMEzjUreKkx1lZG1y4tZy4di5L4uFmNZXzqTn+T6t2Fz7R4GJ9hcS1K4vOZSxdlscKwZP32w74GPGQD8GYEV8eBD4DhEC1XvtWElbm0krn01yiJv7Sxz6SFD/bT2NSafbY9k7l0RhYrbEv2BD5DYhCfw1XvOF8JeK9adB/LYoVtycaiJB7GB1yLXE+N7qvTbXuB0cylX4fWnporvAEb76wuaTuaLyQ9+EnuI/jUnC6U8yWLVQNLdjVz6YXMpSeiJD6GfzFGDp+JcKAGj8KRzKXBrcuUxdqcNSuZGL6ycdkQ8CT+FU67zJpthmAX+8pibc2aTWcu/SZK4s/Mw4zwS6T2bqBtR4FPgO9DjGXJK6ytZ9mDX3Z2CB8IfQEYwL/crMMOu4jPAB0h0BiWhFV/oa2+l3WQ6696Kpm1KoU8pSOEEEIIIYTYIfwL+AeSeuLzAjYAAAAASUVORK5CYII=);
+    width: 750px;
+    height: 100px;
+    background-repeat: no-repeat;
+    background-position: -300px 0px;
+    clear: both;
+    transition: background-position 1s ease-in-out;
+    -webkit-transition: background-position 1s ease-in-out;
+}
+
+#animatedNav a {
+    width: 150px;
+    display: block;
+    float: left;
+    padding: auto;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    font-size: 20px;
+}
+
+#animatedNav a:hover {
+    color: green;
+}
+
+#animatedNav a:nth-child(1):hover ~ #menu-sub {
+    background-position: 0px 0px;
+}
+
+#animatedNav a:nth-child(2):hover ~ #menu-sub {
+    background-position: 150px 0px;
+}
+
+#animatedNav a:nth-child(3):hover ~ #menu-sub {
+    background-position: 300px 0px;
+}
+
+#animatedNav a:nth-child(4):hover ~ #menu-sub {
+    background-position: 450px 0px;
+}
+
+#animatedNav a:nth-child(5):hover ~ #menu-sub {
+    background-position: 600px 0px;
+}
+
+</style>
+<div id="wrapper">
+<nav id="animatedNav">
+    <a href="#">Menu1</a>
+    <a href="#">Menu2</a>
+    <a href="#">Menu3</a>
+    <a href="#">Menu4</a>
+    <a href="#">Menu5</a>
+    <div id="menu-sub"></div>
+</nav>
+</div>
+ 
+</body>
+</html>

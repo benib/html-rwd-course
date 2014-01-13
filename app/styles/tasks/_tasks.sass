@@ -1,0 +1,124 @@
+.task-basic-5
+    div
+        width: 100px
+        height: 100px
+        background: lightgreen
+
+        &.relative
+            position: relative
+            top: 50px
+            left: -20px
+
+.task-basic-6
+    position: relative
+    height: 500px
+    background: #E0FFF2
+    div
+        width: 100px
+        height: 100px
+        background: lightgreen
+
+        &.absolute-1
+            position: absolute
+            bottom: 0
+            right: 0
+        &.absolute-2
+            position: absolute
+            bottom: 10px
+            right: 150px
+
+        &.centered
+            position: absolute
+            background: red
+            left: 50%
+            top: 50%
+            margin-left: -50px
+            margin-top: -50px
+
+.task-basic-7
+    position: relative
+    height: 2000px
+    background: #E0FFF2
+    div
+        width: 100px
+        height: 100px
+        background: lightgreen
+        &.fixed-1
+            position: fixed
+        &.fixed-2
+            position: fixed
+            top: 200px
+            right: 400px
+        &.fixed-3
+            position: fixed
+            bottom: 200px
+            left: 400px
+
+#task-css3-6
+    transition: height 2s linear, width 2s ease, background-color 2s
+    height: 100px
+    width: 100px 
+    background-color: #000000
+
+    &:hover
+        height: 200px
+        width: 200px
+        background-color: #FF0000
+
+.task-css3-7
+    section
+        +clearfix
+        padding-bottom: 50px
+    div
+        width: 100px
+        height: 100px
+    .transforms-original
+        background: rgba(200, 54, 54, 0.5)
+    .transforms-transformed
+        background: rgba(200, 54, 54, 0.8)
+        position: relative
+        top: -100px
+
+@import animations
+
+.task-css3-animations
+    div
+        margin-bottom: 30px
+
+    #animation1
+        height: 100px
+        width: 100px
+        background-color: #000000
+        &:hover
+            animation: grow 2s linear
+            -webkit-animation: grow 2s linear
+            -moz-animation: grow 2s linear
+
+    #animation2
+        height: 100px
+        width: 100px
+        background-color: #000000
+        &:hover
+            animation: grow2 2s linear
+            -webkit-animation: grow2 2s linear
+            -moz-animation: grow2 2s linear
+
+    #animation3
+        margin-bottom: 300px
+        margin-left: 300px
+        height: 100px
+        width: 100px
+        background-color: red
+        color: green
+        transform-origin: 50px 150px
+        -webkit-transform-origin: 50px 150px
+        -moz-transform-origin: 50px 150px
+        animation: rotateDiv 7s linear
+        -webkit-animation: rotateDiv 7s linear
+        -moz-animation: rotateDiv 7s linear
+        animation-iteration-count: infinite
+        -webkit-animation-iteration-count: infinite
+        -moz-animation-iteration-count: infinite
+
+
+

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+
+  <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width" />
+
+  <title>HTML5 @ SAE :: </title>
+  
+</head>
+<body>
+<style type="text/css">
+
+#wrapper {
+    width: 60%;
+    margin: auto;
+}
+
+#slider {
+    background-image:    url("images/slider.jpg");
+    background-repeat:   repeat-x;
+    background-position: 0% bottom;
+    background-size:     300%;
+    padding-bottom:      66.35%;
+    animation:         moveBackground 10s cubic-bezier(0.95,0.05,0.11,0.95) infinite;
+    -webkit-animation: moveBackground 10s cubic-bezier(0.95,0.05,0.11,0.95) infinite;
+}
+
+@keyframes moveBackground {
+  0%   { background-position: 0%   bottom; }
+  33%  { background-position: 50%  bottom; }
+  66%  { background-position: 100% bottom; }
+  100% { background-position: 150% bottom; }
+}
+@-webkit-keyframes moveBackground {
+  0%   { background-position: 0%   bottom; }
+  33%  { background-position: 50%  bottom; }
+  66%  { background-position: 100% bottom; }
+  100% { background-position: 150% bottom; }
+}
+
+</style>
+
+<div id="wrapper">
+    <div id="slider"></div>
+</div>
+ 
+</body>
+</html>

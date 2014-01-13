@@ -1,0 +1,11 @@
+{
+  "name": "responsive-design-course",
+  "version": "0.0.0",
+  "dependencies": {
+    "modernizr": "~2.6.2",
+    "jquery": "~2.0.3"
+  },
+  "devDependencies": {
+    "foundation": "~5.0.2"
+  }
+}

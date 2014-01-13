@@ -1,0 +1,58 @@
+@keyframes grow {
+    from {width: 100px;}
+    to {width: 200px;}
+}
+@-webkit-keyframes grow {
+    from {width: 100px;}
+    to {width: 200px;}
+}
+@-moz-keyframes grow {
+    from {width: 100px;}
+    to {width: 200px;}
+}
+
+@keyframes grow2 {
+    0% {width: 100px;}
+    25% {width: 200px;}
+    50% {width: 150px; background-color:#FF0000;}
+    75% {width: 200px; background-color:#FF0000;}
+    100% {width: 100px; background-color:black;}
+}
+@-webkit-keyframes grow2 {
+    0% {width: 100px;}
+    25% {width: 200px;}
+    50% {width: 150px; background-color:#FF0000;}
+    75% {width: 200px; background-color:#FF0000;}
+    100% {width: 100px; background-color:black;}
+}
+@-moz-keyframes grow2 {
+    0% {width: 100px;}
+    25% {width: 200px;}
+    50% {width: 150px; background-color:#FF0000;}
+    75% {width: 200px; background-color:#FF0000;}
+    100% {width: 100px; background-color:black;}
+}
+
+@keyframes rotateDiv {
+    0 {transform: rotate(0deg);}
+    25% {transform: rotate(-90deg); background-color: yellow; color: red;}
+    50% {transform: rotate(-180deg); background-color: blue; color: yellow;}
+    75% {transform: rotate(-270deg); background-color: green; color: blue;}
+    100% {transform: rotate(-360deg); color: green;}
+}
+
+@-webkit-keyframes rotateDiv {
+    0 {-webkit-transform: rotate(0deg);}
+    25% {-webkit-transform: rotate(-90deg); background-color: yellow; color: red;}
+    50% {-webkit-transform: rotate(-180deg); background-color: blue; color: yellow;}
+    75% {-webkit-transform: rotate(-270deg); background-color: green; color: blue;}
+    100% {-webkit-transform: rotate(-360deg); color: green;}
+}
+
+@-moz-keyframes rotateDiv {
+    0 {-moz-transform: rotate(0deg);}
+    25% {-moz-transform: rotate(-90deg); background-color: yellow; color: red;}
+    50% {-moz-transform: rotate(-180deg); background-color: blue; color: yellow;}
+    75% {-moz-transform: rotate(-270deg); background-color: green; color: blue;}
+    100% {-moz-transform: rotate(-360deg); color: green;}
+}

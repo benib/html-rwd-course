@@ -1,0 +1,85 @@
+@import "foundation/scss/foundation/settings"
+@import "foundation/scss/foundation/components/global"
+@import "foundation/scss/foundation/components/forms"
+@import "foundation/scss/foundation/components/type"
+@import "foundation/scss/foundation/components/grid"
+
+
+@import "settings"
+
+
+input[type="text"],
+input[type="password"],
+input[type="checkbox"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="week"],
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+textarea
+    margin-bottom: 0
+
+body > header, body > article
+    padding-left: 1em
+    padding-right: 1em
+
+.tasks-container
+    +clearfix
+
+    .task-details
+        width: 100%
+        float: left
+        padding: 1rem
+        border-top: 1px solid lightgrey
+        border-bottom: 1px solid lightgrey
+        position: relative
+
+        h3
+            padding-top: 1rem
+
+        footer
+            margin-top: 2rem
+            padding: 1rem
+            background: $color-task-detail-footer
+
+
+.task
+    float: left
+    width: 200px
+    height: 200px
+    background: $color-todo
+    color: white
+    padding: 0.5rem
+    margin: 0.5rem
+    cursor: pointer
+
+    &.done
+        background: $color-done
+
+    > h3
+        font-size: 1rem
+
+    .task-details
+        display: none
+
+i.close-icon
+    display: block
+    position: absolute
+    top: 1rem
+    right: 1rem
+    cursor: pointer
+    &:after
+        content: 'x'
+
+
+@import tasks/tasks
+
+
+
+
