@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+
+  <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width" />
+
+  <title>Responsive Column Layout</title>
+  
+</head>
+<body>
+<style type="text/css">
+
+* {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+article {
+    max-width: 1200px;
+    margin: auto;
+}
+
+section {
+    padding-bottom: 20px;
+}
+
+section:after {
+    visibility: hidden;
+    display: block;
+    content: "";
+    clear: both;
+    height: 0;
+}
+
+div {
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    float: left;
+}
+
+@media (min-width: 800px) {
+    div {
+        width: 50%;
+    }
+}
+
+</style>
+
+<article>
+    <section>
+        <div>Lorem ipsum dolor sit amet, an labore appareat vim, aliquam alienum deterruisset te ius. Et eam essent commodo, vide tempor scripserit ea duo, sed possit dictas consulatu cu. Ad numquam noluisse est. In sed sumo dolorem tractatos, id sit duis expetendis consectetuer, quod facilisis urbanitas at usu. Ne inani viris mel, brute graeci ex pro, in pri tantas accusam postulant. Usu viderer tibique volutpat te, agam accusamus pro ea, in has doming nemore interpretaris.</div>
+        <div>Lorem ipsum dolor sit amet, an labore appareat vim, aliquam alienum deterruisset te ius. Et eam essent commodo, vide tempor scripserit ea duo, sed possit dictas consulatu cu. Ad numquam noluisse est. In sed sumo dolorem tractatos, id sit duis expetendis consectetuer, quod facilisis urbanitas at usu. Ne inani viris mel, brute graeci ex pro, in pri tantas accusam postulant. Usu viderer tibique volutpat te, agam accusamus pro ea, in has doming nemore interpretaris.</div>
+    </section>
+    <section>
+        <div>Lorem ipsum dolor sit amet, an labore appareat vim, aliquam alienum deterruisset te ius. Et eam essent commodo, vide tempor scripserit ea duo, sed possit dictas consulatu cu. Ad numquam noluisse est. In sed sumo dolorem tractatos, id sit duis expetendis consectetuer, quod facilisis urbanitas at usu. Ne inani viris mel, brute graeci ex pro, in pri tantas accusam postulant. Usu viderer tibique volutpat te, agam accusamus pro ea, in has doming nemore interpretaris.</div>
+        <div>Lorem ipsum dolor sit amet, an labore appareat vim, aliquam alienum deterruisset te ius. Et eam essent commodo, vide tempor scripserit ea duo, sed possit dictas consulatu cu. Ad numquam noluisse est. In sed sumo dolorem tractatos, id sit duis expetendis consectetuer, quod facilisis urbanitas at usu. Ne inani viris mel, brute graeci ex pro, in pri tantas accusam postulant. Usu viderer tibique volutpat te, agam accusamus pro ea, in has doming nemore interpretaris.</div>
+    </section>
+    <section>
+        <div>Lorem ipsum dolor sit amet, an labore appareat vim, aliquam alienum deterruisset te ius. Et eam essent commodo, vide tempor scripserit ea duo, sed possit dictas consulatu cu. Ad numquam noluisse est. In sed sumo dolorem tractatos, id sit duis expetendis consectetuer, quod facilisis urbanitas at usu. Ne inani viris mel, brute graeci ex pro, in pri tantas accusam postulant. Usu viderer tibique volutpat te, agam accusamus pro ea, in has doming nemore interpretaris.</div>
+        <div>Lorem ipsum dolor sit amet, an labore appareat vim, aliquam alienum deterruisset te ius. Et eam essent commodo, vide tempor scripserit ea duo, sed possit dictas consulatu cu. Ad numquam noluisse est. In sed sumo dolorem tractatos, id sit duis expetendis consectetuer, quod facilisis urbanitas at usu. Ne inani viris mel, brute graeci ex pro, in pri tantas accusam postulant. Usu viderer tibique volutpat te, agam accusamus pro ea, in has doming nemore interpretaris.</div>
+    </section>
+    <section>
+        <div>Lorem ipsum dolor sit amet, an labore appareat vim, aliquam alienum deterruisset te ius. Et eam essent commodo, vide tempor scripserit ea duo, sed possit dictas consulatu cu. Ad numquam noluisse est. In sed sumo dolorem tractatos, id sit duis expetendis consectetuer, quod facilisis urbanitas at usu. Ne inani viris mel, brute graeci ex pro, in pri tantas accusam postulant. Usu viderer tibique volutpat te, agam accusamus pro ea, in has doming nemore interpretaris.</div>
+        <div>Lorem ipsum dolor sit amet, an labore appareat vim, aliquam alienum deterruisset te ius. Et eam essent commodo, vide tempor scripserit ea duo, sed possit dictas consulatu cu. Ad numquam noluisse est. In sed sumo dolorem tractatos, id sit duis expetendis consectetuer, quod facilisis urbanitas at usu. Ne inani viris mel, brute graeci ex pro, in pri tantas accusam postulant. Usu viderer tibique volutpat te, agam accusamus pro ea, in has doming nemore interpretaris.</div>
+    </section>
+</article>
+ 
+</body>
+</html>
