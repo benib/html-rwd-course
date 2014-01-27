@@ -1,0 +1,33 @@
+---
+title: Location API
+---
+{{#markdown}}
+
+Die Location API ist eine Javascript API, um den Browser zu fragen, wo er sich befindet.
+
+#### Aufgabe
+- Lesen: http://diveintohtml5.info/geolocation.html
+- Versuch eine Webseite zu machen, welche die Position des Browsers anzeigt
+- Versuch den Punkt auf einer Karte darzustellen mit Google Maps API oder Leaflet.js
+
+```js
+function getLocation() {
+  if (navigator.geolocation) {
+	navigator.geolocation.getCurrentPosition(showPosition);
+  } else
+    //der Browser unterstützt die Location API nicht
+  }
+}
+function showPosition(position) {
+  //diese funktion wird aufgerufen, wenn der Browser seine Position bekannt gegeben hat.
+
+  //position.coords.latitude
+  //position.coords.longitude
+}
+
+getLocation();
+```
+
+{{/markdown}}
+
+
