@@ -80,6 +80,63 @@ title: HTML5 and Responsive Web Design Kurs
 </section>
 <section>
     <header>
+        <h2>Frontend Frameworks</h2>
+    </header>
+    <div class="tasks-container">
+        {{#compose 'tasks/frameworks/*.hbs'}}
+            <article class="task" id="{{ slugify title}}">
+                <h3>{{title }}</h3>
+                <section class="task-details" data-id="{{ slugify title}}">
+                    <h3>{{title }}</h3>
+                    <div>{{{substance}}}</div>
+                    <footer>
+                        Ich habe diese Aufgabe erledigt: <input class="task-done" type="checkbox">
+                    </footer>
+                </section>
+            </article>
+        {{/compose}}
+    </div>
+</section>
+<section>
+    <header>
+        <h2>Advanced Frontending</h2>
+    </header>
+    <div class="tasks-container">
+        {{#compose 'tasks/advanced/*.hbs'}}
+            <article class="task" id="{{ slugify title}}">
+                <h3>{{title }}</h3>
+                <section class="task-details" data-id="{{ slugify title}}">
+                    <h3>{{title }}</h3>
+                    <div>{{{substance}}}</div>
+                    <footer>
+                        Ich habe diese Aufgabe erledigt: <input class="task-done" type="checkbox">
+                    </footer>
+                </section>
+            </article>
+        {{/compose}}
+    </div>
+</section>
+<section>
+    <header>
+        <h2>Fancy Stuff (für zwischendurch)</h2>
+    </header>
+    <div class="tasks-container">
+        {{#compose 'tasks/fancy/*.hbs'}}
+            <article class="task" id="{{ slugify title}}">
+                <h3>{{title }}</h3>
+                <section class="task-details" data-id="{{ slugify title}}">
+                    <h3>{{title }}</h3>
+                    <div>{{{substance}}}</div>
+                    <footer>
+                        Ich habe diese Aufgabe erledigt: <input class="task-done" type="checkbox">
+                    </footer>
+                </section>
+            </article>
+        {{/compose}}
+    </div>
+</section>
+<section>
+    <header>
         <h2>Grössere Aufgaben (wenn es dir sonst langweilig ist)</h2>
     </header>
     <div class="tasks-container">

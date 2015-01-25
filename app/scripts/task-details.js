@@ -1,64 +1,110 @@
-$(function() {
+(function(bb, $) {
     'use strict';
 
-    //mark tasks as done
-    $.each($('.task'), function(key, taskElement) {
-        if (localStorage.getItem($(taskElement).attr('id')) === "true") {
-            $(taskElement).addClass('done');
-            $(taskElement).find('input.task-done').prop('checked', true);
-        }
-    });
+    bb.Task = function(config) {
+        this.$task      = config.taskElement;
+        this.id         = this.$task.attr('id');
+        this.beforeOpen = config.beforeOpen;
 
-    // Show project details when teaser is clicked.
-    $('.task').click(function(event) {
+        this.detailState = 'closed';
 
-        var clickedTask = event.target,
-            previouslyOpened = $(clickedTask).parent().find('.opened-task');
+        this.$detailElement = this.$task.find('.task-details');
 
-        if ($(clickedTask).hasClass('done')) {
-            $(clickedTask).find('input.task-done').prop('checked', true);
-        }
-        
-        // Close any already opened details in this section
-        $(clickedTask).siblings('.task-details').remove();
-        previouslyOpened.removeClass('expanded-project');
+        this.loadFromLocalStorage();
 
-        // Only proceed if clicked item is not the same as previously expanded one
-        if(previouslyOpened[0] !== clickedTask) {
-
-            var clickedTaskOffsetTop = $(clickedTask).offset().top;
-            var lastItemInLine = undefined;
-
-            $.each($(clickedTask).parent().find('.task'), function(key, taskElement) {
-                if ($(taskElement).offset().top !== clickedTaskOffsetTop) {
-                    return;
-                }
-                lastItemInLine = taskElement;
-            });
-
-            var newDetailElement = $(clickedTask).find('.task-details').clone();
-            newDetailElement.insertAfter(lastItemInLine);
-            $(clickedTask).addClass('.opened-task');
-
-            // Append close button to project description
-            newDetailElement.append('<i class=\'close-icon\' />');
-
-            // add close action to close button
-            $('.task-details .close-icon').click(function(event) {
-                $(event.target).parent().remove();
-            });
-        }
-
-        $('.task-done').change(function(event) {
-            var id = $(event.target).closest('.task-details').data('id');
-            if (event.target.checked === true) {
-                $('#' + id).addClass('done');
+        //bind click action
+        this.$task.on('click', function(event) {
+            if (this.detailState == 'closed') {
+                this.beforeOpen.call(this);
+                this.showDetail();
             } else {
-                $('#' + id).removeClass('done');
+                this.hideDetail();
             }
-            localStorage.setItem(id, event.target.checked);
-        });
+        }.bind(this));
 
+        //add close icon and action
+        this.$detailElement.append('<i class=\'close-icon\' />');
+        this.$detailElement.find('.close-icon').on('click', function(event) {
+            this.hideDetail();
+        }.bind(this));
+
+        this.$task.find('.task-done').change(function(event) {
+            event.preventDefault();
+            event.stopPropagation();
+            if (event.target.checked) {
+                this.markDone();
+            } else {
+                this.markUndone();
+            }
+        }.bind(this));
+    }
+
+    bb.Task.prototype.loadFromLocalStorage = function() {
+        if (localStorage.getItem(this.id) === "true") {
+            this.markDone();
+        }
+    }
+
+    bb.Task.prototype.markDone = function() {
+        this.$task.addClass('done');
+        this.$task.find('input.task-done').prop('checked', true);
+        localStorage.setItem(this.id, true);
+    }
+
+    bb.Task.prototype.markUndone = function() {
+        this.$task.removeClass('done');
+        this.$task.find('input.task-done').prop('checked', false);
+        localStorage.removeItem(this.id);
+    }
+
+    bb.Task.prototype.showDetail = function() {
+        this.$task.addClass('expanded-project');
+        this.$detailElement.insertAfter(this.getLastTaskElementInLine());
+        this.detailState = 'opened';
+    }
+
+    bb.Task.prototype.hideDetail = function() {
+        this.$task.removeClass('expanded-project');
+        this.$detailElement.appendTo(this.$task);
+        this.detailState = 'closed';
+    }
+
+    bb.Task.prototype.hasSameParent = function(task) {
+        return task.getParentElement()[0] == this.getParentElement()[0]
+    }
+
+    bb.Task.prototype.getParentElement = function(task) {
+        return this.$task.parent();
+    }
+
+    bb.Task.prototype.getLastTaskElementInLine = function() {
+        var offsetTop         = this.$task.offset().top;
+        var lastItemInLine = undefined;
+
+        $.each(this.getParentElement().find('.task'), function(key, taskElement) {
+            if ($(taskElement).offset().top !== offsetTop) {
+                return;
+            }
+            lastItemInLine = taskElement;
+        });
+        return $(lastItemInLine);
+    }
+
+    bb.tasks = [];
+
+    $.each($('.task'), function(key, taskElement) {
+        bb.tasks.push(new bb.Task({
+            taskElement: $(taskElement),
+            beforeOpen: function() {
+                bb.tasks.forEach(function(task, index) {
+                    if (this.hasSameParent(task) && this != task) {
+                        task.hideDetail();
+                    }
+                },this);
+            }
+        }));
     });
 
-});
+
+
+})(bb = window.bb || {}, jQuery);
